@@ -1,0 +1,43 @@
+GET http://localhost:8080/bøker/
+
+
+###
+
+POST http://localhost:8080/bøker/bestill
+Content-Type: application/json
+
+{
+  "bestillingsId": "o-1",
+  "bøker" : [
+    {
+      "ISBN": 1234567,
+      "antallØnsket": 10
+    },
+    {
+      "ISBN": 1234568,
+      "antallØnsket": 20
+    }
+  ]
+}
+
+###
+
+POST http://localhost:8080/bøker/admin/oppdater/beholdning
+Content-Type: application/json
+
+{
+  "oppdateringer": [
+    {
+      "ISBN": 1234567,
+      "antallNye": 200
+    },
+    {
+      "ISBN": 1234577,
+      "antallNye": 100
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/bøker/admin/mostsold/by/week-day
